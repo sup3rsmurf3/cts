@@ -1,42 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>List</title>
+
+    <meta charset="UTF-8">
+    <title>Dynamically add/remove items from list - JavaScript</title>
 </head>
+<body>
 <script>
-	var names = [];
+function addItem(){
+	var ul = document.getElementById("dynamic-list");
+  var candidate = document.getElementById("candidate");
+  var li = document.createElement("li");
+  li.setAttribute('id',candidate.value);
+  li.appendChild(document.createTextNode(candidate.value));
+  ul.appendChild(li);
+}
 
-
-function displayUserName()
-{
-  var name = document.getElementById("enter").value;
-  if (name == "" || name.length == 0)
-  {
-     return false; //stop the function since the value is empty.
-  }
-  names.push(name);
-  document.getElementById("name").children[0].innerHTML += "<li>"+names[names.length-1]+"</li>";
+function removeItem(){
+	var ul = document.getElementById("dynamic-list");
+  var candidate = document.getElementById("candidate");
+  var item = document.getElementById(candidate.value);
+  ul.removeChild(item);
 }
 </script>
-<script>
-	function del(){
-		var name = document.getElementById("enter").value;
-		if (name != "" || name.length != 0)
-  {
-     return true; //stop the function since the value is empty.
-  }
-		names.pop(name);
-		document.getElementById("name").children[0].innerHTML -= "<li>"+names[names.length-1]-"</li>";
-	}
-</script>
-<body>
-<input id="enter" type="text" >
-<br><br>
-<input type="button" value="Add" onclick="displayUserName()" >
-<br><br>
-<input type="button" value="Delete" onclick="del()" >
-<br>
-<br>
-<div id="name"><ul></ul></div>
+
+    <ul id="dynamic-list"></ul>
+
+    <input type="text" id="candidate"/><br><br>
+    <button onclick="addItem()">Add</button><br><br>
+    <button onclick="removeItem()">Delete</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
