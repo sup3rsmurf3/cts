@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head><meta charset=utf-8 />
+<title>Change the content of a cell</title>
+<script>
+function changeContent()
+{
+rn = window.prompt("Input the Row number(0,1,2,3,4)", "0");
+cn = window.prompt("Input the Column number(0,1,2,3,4)","0");
+content = window.prompt("Input the Cell content");  
+var x=document.getElementById('myTable').rows[parseInt(rn,10)].cells;
+x[parseInt(cn,10)].innerHTML=content;
+}
+</script>
+</head>
+<link rel="stylesheet" href="./5.css">
+<body class="body">
+	<center>
+	<div class="table">
+<table id="myTable" border="1" >
+<tr><td>Row1 cell1</td>
+<td>Row1 cell2</td><td>Row1 cell3</td><td>Row1 cell4</td><td>Row1 cell5</td></tr>
+<tr><td>Row2 cell1</td>
+<td>Row1 cell2</td><td>Row2 cell3</td><td>Row2 cell4</td><td>Row2 cell5</td></tr>
+<tr><td>Row3 cell1</td>
+<td>Row1 cell2</td><td>Row3 cell3</td><td>Row3 cell4</td><td>Row3 cell5</td></tr>
+<tr><td>Row4 cell1</td>
+<td>Row1 cell2</td><td>Row4 cell3</td><td>Row4 cell4</td><td>Row4 cell5</td></tr>
+<tr><td>Row5 cell1</td>
+<td>Row1 cell2</td><td>Row5 cell3</td><td>Row5 cell4</td><td>Row5 cell5</td></tr>
+
+</table>
+</div></center>
+<br><br>
+<form class="form">
+<input type="button" onclick="changeContent()" value="Change">
+</form></body></html>
