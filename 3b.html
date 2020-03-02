@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Week Change</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var clicks = 0;
+    function onClick() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+if (clicks == 1)
+{
+document.getElementById('clicks').innerHTML = "Monday";
+}
+if (clicks == 2)
+{
+document.getElementById('clicks').innerHTML = "Tuesday";
+}
+if (clicks == 3)
+{
+document.getElementById('clicks').innerHTML = "Wednesday";
+}
+if (clicks == 4)
+{
+document.getElementById('clicks').innerHTML = "Thrusday";
+}
+if (clicks == 5)
+{
+document.getElementById('clicks').innerHTML = "Friday";
+}
+if (clicks == 6)
+{
+document.getElementById('clicks').innerHTML = "Saturday";
+}
+if (clicks == 7)
+{
+document.getElementById('clicks').innerHTML = "Sunday";
+
+}
+
+
+    };
+</script>
+
+<p><a id="clicks" style="font-size: 40px;">Day</a></p>
+<button type="button" onClick="onClick()">Change</button>
+
+
+</body>
+</html>
