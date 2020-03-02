@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List</title>
+</head>
+<script>
+	var names = [];
+
+
+function displayUserName()
+{
+  var name = document.getElementById("enter").value;
+  if (name == "" || name.length == 0)
+  {
+     return false; //stop the function since the value is empty.
+  }
+  names.push(name);
+  document.getElementById("name").children[0].innerHTML += "<li>"+names[names.length-1]+"</li>";
+}
+</script>
+<script>
+	function del(){
+		var name = document.getElementById("enter").value;
+		if (name != "" || name.length != 0)
+  {
+     return true; //stop the function since the value is empty.
+  }
+		names.pop(name);
+		document.getElementById("name").children[0].innerHTML -= "<li>"+names[names.length-1]-"</li>";
+	}
+</script>
+<body>
+<input id="enter" type="text" >
+<br><br>
+<input type="button" value="Add" onclick="displayUserName()" >
+<br><br>
+<input type="button" value="Delete" onclick="del()" >
+<br>
+<br>
+<div id="name"><ul></ul></div>
+</body>
+</html>
